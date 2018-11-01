@@ -1,0 +1,50 @@
+#!/bin/bash
+# source you pyenv or conda or whatever here
+cd ~/code/ParlAI/
+python examples/train_model.py \
+-t convai2:self \
+--max-train-time 82079 \
+--model parlai_external.agents.seq2seq_on_steroids.seq2seq_on_steroids:SteroidSeq2seqAgent \
+--init-model model # PUT INITIAL MODEL HERE, from model.tar.gz
+--margin 1 \
+--num-rank-cand 5 \
+--cand-type current_labels \
+--lmweight 0.1 \
+-bi True \
+-pt True \
+--strict-load False \
+--rankweight 1 \
+--rankhiddensize 512 \
+--ranknl 4 \
+--ranklossreduce elementwise_mean \
+--rank-activation Tanh \
+-rc True \
+-hs 512 \
+-esz 300 \
+-att general \
+-nl 2 \
+-rnn lstm \
+-lr 0.001 \
+-dr 0.5 \
+-clip 0.1 \
+-lt enc_dec \
+-opt adam \
+-emb glove \
+-mom 0.9 \
+-bs 64 \
+-bsrt False \
+--tensorboard-log True \
+--tensorboard-tag margin,num_rank_cand,lmweight,rankweight,rankhiddensize,ranknl,ranklossreduce,rank_activation \
+--tensorboard-comment withadam001 \
+--tensorboard-metrics loss,rank_loss,ppl,f1,hits@1,hits@5,hits@10 \
+-veps 0.5 \
+--validation-metric hits@1 \
+--validation-metric-mode max \
+--validation-patience 24 \
+--save-after-valid True \
+--load-from-checkpoint True \
+--dict-lower True \
+--dict-maxexs -1 \
+--dict-include-valid True \
+--log-every-n-secs 25 \
+--model-file #PATH TO SAVE NEWLY TRAINED FILES
