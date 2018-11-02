@@ -1,6 +1,6 @@
 # Importance of a Search Strategy in Neural Dialogue Modelling
 
-beamybeam.github.io
+[https://uralik.github.io/beamdream/](https://uralik.github.io/beamdream/)
 
 This repo provides code, trained models, run scripts and human evaluation transcripts for our work
 on different search strategies for neural dialogue models.
