@@ -31,9 +31,7 @@ from parlai_external.agents.seq2seq_on_steroids.modules import SteroidSeq2seq
 This is the model used for all experiments in the paper. Corresponding `.opt` file provides
 all hyperparameters which were used during the training.
 
-[seq2seq model](http://ikulikov.name/model.tar.gz)
-
-[seq2seq model with scorer](http://ikulikov.name/model_with_scorer.tar.gz)
+[seq2seq model](https://cims.nyu.edu/~kulikov/model_checkpoint.tar.gz)
 
 Archive contains typical set of files needed in ParlAI to do any kinds of further tasks. Please see
 ParlAI docs for further details.
@@ -41,8 +39,17 @@ ParlAI docs for further details.
 To make a quick check to verify your model is running you can use eval script after paths
 adjustments.
 
-
 ### Citation
 Please use the following bib if you wish to cite our work:
 
+```
+@misc{kulikov2018importance,
+    title={Importance of Search and Evaluation Strategies in Neural Dialogue Modeling},
+    author={Ilia Kulikov and Alexander H. Miller and Kyunghyun Cho and Jason Weston},
+    year={2018},
+    eprint={1811.00907},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+```
 
